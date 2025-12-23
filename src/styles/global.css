@@ -1,4 +1,31 @@
-/* nav styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+/* sticky footer */
+#content {
+  flex: 1;
+}
+
+/* WŁAŚCIWY CONTENT */
+.container {
+  max-width: 1200px;     /* szerokość treści */
+  margin: 0 auto;        /* centrowanie */
+  padding: 2rem 1rem;    /* odstęp od krawędzi */
+}
+
+
+
+/* nav styles
 .menu {
   background-color: #0d0950;
   border: none;
@@ -51,4 +78,4 @@
   .menu {
     display: none;
   }
-}
+} */
