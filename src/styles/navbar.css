@@ -5,7 +5,7 @@
   z-index: 1000;
 
   height: 56px; /* <<< TU ZMIENIASZ WYSOKOŚĆ */
-  background: rgba(0, 0, 0, 0.4); /* przezroczysty */
+  background: rgba(155, 125, 28, 0.4); /* przezroczysty */
   backdrop-filter: blur(8px);    /* glass effect */
 }
 
