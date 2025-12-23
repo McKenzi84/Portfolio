@@ -1,7 +1,7 @@
 ---
-title: "My Second Blog Post"
-pubDate: 2025-07-01
-description: "This is the first post of my new Astro blog."
+title: "Burrless drill"
+pubDate: 2025-12-23
+description: "Carbide drill "
 author: "McKenzi84"
 image:
   url: "https://docs.astro.build/assets/rose.webp"
@@ -9,11 +9,9 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-# My First Blog Post
-
-Published on: 2022-07-01
-
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+
+![Alt text](../../assets/photos/drill.webp)
 
 ## What I've accomplished
 

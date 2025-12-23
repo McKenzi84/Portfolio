@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-
+  width: 100%;
   height: 56px; /* <<< TU ZMIENIASZ WYSOKOŚĆ */
   min-height: 56px;
   background: rgba(155, 125, 28, 0.4); /* przezroczysty */

@@ -27,3 +27,9 @@
   transform: scale(1.03);
 }
 
+.container img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
