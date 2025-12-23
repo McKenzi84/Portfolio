@@ -3,10 +3,10 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%;
+  
   height: 56px; /* <<< TU ZMIENIASZ WYSOKOŚĆ */
   min-height: 56px;
-  background: rgba(155, 125, 28, 0.4); /* przezroczysty */
+  background: rgba(155, 64, 28, 0.4); /* przezroczysty */
   backdrop-filter: blur(8px);    /* glass effect */
 }
 
@@ -16,7 +16,7 @@
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 0rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,6 +72,11 @@
 @media (max-width: 768px) {
   .burger {
     display: block;
+    margin-right: 1rem; /* give burger extra right spacing on mobile */
+  }
+
+  .logo {
+    margin-left: 0.6rem; /* small left margin on mobile */
   }
 
   .nav-links {

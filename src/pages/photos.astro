@@ -28,4 +28,15 @@ const images = Object.values(
       ))
     }
   </div>
+
+  <!-- Lightbox overlay -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <img class="lightbox-img" src="" alt="Enlarged photo" />
+    <div class="lightbox-caption" aria-hidden="true"></div>
+  </div>
+
+  <script>
+    import "../scripts/photos.js";
+  </script>
 </BaseLayout>
