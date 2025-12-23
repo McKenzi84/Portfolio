@@ -1,0 +1,21 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post {
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+}
+
+/* .post h2 {
+  margin-top: 0;
+} */
+
+.post .date {
+  font-size: 0.85rem;
+  color: #666;
+}

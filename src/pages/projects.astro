@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/posts.css";
+// import { Markdown } from '@astro/types'; // typ opcjonalny
+
+// Pobieramy wszystkie pliki .md w folderze posts
+const postFiles = import.meta.glob("../pages/posts/*.md", { eager: true });
+
+// Zamieniamy na tablicę postów
+const posts = Object.values(postFiles)
+  .map((post: any) => (post.frontmatter ? post : null))
+  .filter(Boolean)
+  .map((post) => ({
+    title: post.frontmatter.title,
+    date: post.frontmatter.date,
+    content: post.default, // to jest komponent Astro
+  }))
+  // sortujemy po dacie (opcjonalnie)
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+---
+
+<BaseLayout pageTitle="Blog">
+  <!-- <h1>Blog</h1> -->
+
+  <div class="posts">
+    {
+      posts.map((post) => (
+        <article class="post">
+          <h2>{post.title}</h2>
+          <p class="date">{post.date}</p>
+          <div class="content">
+            <post.content />
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</BaseLayout>
