@@ -25,4 +25,13 @@ body {
   color: #a7a3a3;
 }
 
+ul{
+  list-style: '*';
+  padding: 20;
+  margin: 10;
+  /* color: #910909; */
+  /* background: #410303; */
+  font-size: 30px;
+}
+
 
