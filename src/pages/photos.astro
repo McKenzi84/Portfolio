@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import "../styles/photos.css";
 
@@ -18,12 +19,13 @@ const images = Object.values(
   <div class="photo-grid">
     {
       images.map((img) => (
-        <img
-          src={img.default.src}
-          width={img.default.width}
-          height={img.default.height}
+        <Image
+          src={img.default}
           alt="Photo"
           loading="lazy"
+          width={400}
+          height={300}
+          format="webp"
         />
       ))
     }
