@@ -1,17 +1,10 @@
 ---
-import Social from "./Social.astro";
+// import { SITE_TITLE, SITE_URL } from "../consts";
+const today = new Date();
 ---
 
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
-
 <footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+  <div class="container">
+    <p>&copy; {today.getFullYear()} - <a href="#">McKenzi84</a></p>
+  </div>
 </footer>

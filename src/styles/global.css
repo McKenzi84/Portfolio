@@ -17,18 +17,13 @@ body {
 #content {
   flex: 1;
   display: flow-root; /* BLOKUJE margin collapse */
-  
 }
 
 /* WŁAŚCIWY CONTENT */
 .container {
-  max-width: 1200px;     /* szerokość treści */
-  margin: 0 auto;        /* centrowanie */
-  padding: 2rem 1rem;    /* odstęp od krawędzi */
+  max-width: 1200px; /* szerokość treści */
+  margin: 0 auto; /* centrowanie */
+  padding: 2rem 1rem; /*odstęp od krawędzi */
   color: #a7a3a3;
   padding-top: 2rem;
 }
-
-
-
-

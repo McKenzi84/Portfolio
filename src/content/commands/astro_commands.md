@@ -5,28 +5,28 @@ author: Tomek
 date: 2025-01-10
 ---
 
-Run dev server
-
 ```bash
-npm run dev
+# Create new Astro Project
+npm create astro@latest
 ```
 
 ---
 
-Run dev server
-
 ```bash
+#Run local dev server
 npm run dev -- --host
 ```
 
-Tworzymy statyczną wersję w folderze dist
+---
 
 ```bash
+# Create static version in dist folder
 npm run build
 ```
 
-Uruchamianie lokalnego builda
+---
 
 ```bash
+# Run local build
 npm run preview
 ```
