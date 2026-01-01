@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/posts.css";
+
+const post = await import("../content/commands/astro_commands.md");
+---
+
+<BaseLayout pageTitle={post.frontmatter.title}>
+  <article class="post">
+    <p>{post.frontmatter.title}</p>
+    <p>{post.frontmatter.description}</p>
+
+    <div class="content">
+      <post.Content />
+    </div>
+
+    <!-- <p class="date">{post.frontmatter.date}</p> -->
+    <!-- <p class="date">{new Date(post.frontmatter.date).toLocaleDateString()}</p> -->
+    <!-- <p>Author: {post.frontmatter.author}</p> -->
+  </article>
+</BaseLayout>

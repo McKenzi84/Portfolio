@@ -9,7 +9,7 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-![Alt text](../../assets/photos/drill.webp)
+![Alt](../../assets/photos/drill.webp)
 
 ## This is my first Post
 
