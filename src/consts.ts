@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 const baseUrl = import.meta.env.BASE_URL;
 // Site config
-export const SITE_URL = "https://github.com/McKenzi84/Portfolio"; // your https url
+export const SITE_URL = "https://mckenzi84.github.io/Portfolio/"; // your https url
 export const SITE_TITLE = "McKenzi84"; // your base page title
 export const SITE_DESCRIPTION = "Welcome to my website!"; // your base description
 export const HEADER_TITLE = "Mckenzi84"; // your title used in header
