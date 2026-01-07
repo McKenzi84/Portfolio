@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default.css";
+@import "../../node_modules/flowbite-typography/dist/typography.css";
+
+@plugin "flowbite/plugin";
+
+
+@source "../../node_modules/flowbite";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* You can define your color here https://www.tints.dev */
+@theme {
+    --color-primary-50: #f2faef;
+    --color-primary-100: #e5f6e0;
+    --color-primary-200: #c7ebbc;
+    --color-primary-300: #ade19d;
+    --color-primary-400: #90d77a;
+    --color-primary-500: #74cd5a;
+    --color-primary-600: #54b437;
+    --color-primary-700: #40892a;
+    --color-primary-800: #2a5a1b;
+    --color-primary-900: #162f0e;
+    --color-primary-950: #0b1707;
+
+    --font-sans: 'Roboto Mono', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --font-body: 'Roboto Mono', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --font-mono: 'Roboto Mono', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* Apply font variables */
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-sans);
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
