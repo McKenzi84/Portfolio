@@ -1,0 +1,42 @@
+---
+const { size = 48 } = Astro.props;
+---
+
+<div
+  class="logo-circle text-primary-600 dark:text-primary-400 border-primary-600 dark:border-primary-400"
+  style={`--size: ${size}px`}
+>
+  <span class="letter top">T</span>
+  <span class="letter bottom">Ż</span>
+</div>
+
+<style>
+  .logo-circle {
+    width: var(--size);
+    height: var(--size);
+    border-radius: 9999px;
+    border-width: 0.5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font-sans);
+    font-weight: 700;
+    user-select: none;
+  }
+
+  .letter {
+    line-height: 1;
+  }
+
+.top {
+  font-size: calc(var(--size) * 0.38);
+  margin-bottom: 0.2em;
+}
+
+  .bottom {
+    font-size: calc(var(--size) * 0.42);
+  }
+</style>

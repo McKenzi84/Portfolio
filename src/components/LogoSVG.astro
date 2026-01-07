@@ -1,0 +1,46 @@
+---
+const { size = 48 } = Astro.props;
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 100 100"
+  fill="none"
+  class="text-primary-600"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-label="Logo"
+>
+  <!-- Circle -->
+  <circle
+    cx="50"
+    cy="50"
+    r="48"
+    stroke="currentColor"
+    stroke-width="1"
+  />
+
+  <!-- T -->
+  <text
+    x="50"
+    y="42"
+    text-anchor="middle"
+    font-size="28"
+    font-weight="700"
+    fill="currentColor"
+  >
+    T
+  </text>
+
+  <!-- Ż -->
+  <text
+    x="50"
+    y="72"
+    text-anchor="middle"
+    font-size="30"
+    font-weight="700"
+    fill="currentColor"
+  >
+    Ż
+  </text>
+</svg>
