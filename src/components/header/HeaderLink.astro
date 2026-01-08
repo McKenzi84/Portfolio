@@ -1,14 +1,18 @@
 ---
 const { href } = Astro.props;
-const baseUrl = import.meta.env.BASE_URL;
-const pathname = Astro.url.pathname.replace(baseUrl, "");
+// Normalize base and href so we don't end up with '//' when BASE_URL is '/'
+const rawBaseUrl = import.meta.env.BASE_URL || '/';
+const baseUrl = rawBaseUrl === '/' ? '' : rawBaseUrl.replace(/\/$/, '');
+const pathname = Astro.url.pathname.replace(rawBaseUrl, "");
 const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
+const normalizedHref = href.startsWith('/') ? href : `/${href}`;
+const fullHref = `${baseUrl}${normalizedHref}`;
 ---
 
 <li>
   <a
-    href={`${baseUrl}${ href }`}
+    href={fullHref}
     class:list={[
       "block",
       "py-2",
