@@ -10,6 +10,7 @@
 
 /* You can define your color here https://www.tints.dev */
 @theme {
+<<<<<<< HEAD
   --color-primary-50: #f2faef;
   --color-primary-100: #e5f6e0;
   --color-primary-200: #c7ebbc;
@@ -21,6 +22,19 @@
   --color-primary-800: #2a5a1b;
   --color-primary-900: #162f0e;
   --color-primary-950: #0b1707;
+=======
+  --color-primary-50: #f3effd;
+  --color-primary-100: #e9e1fb;
+  --color-primary-200: #d5c4f8;
+  --color-primary-300: #c1a6f4;
+  --color-primary-400: #ae86f0;
+  --color-primary-500: #9a5feb;
+  --color-primary-600: #8533dd;
+  --color-primary-700: #6625ab;
+  --color-primary-800: #461778;
+  --color-primary-900: #2a0b4c;
+  --color-primary-950: #1a0532;
+>>>>>>> f3d4a31bca3df3d510ca05ec83afd4ce27ea8b44
 
   --font-sans:
     "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
