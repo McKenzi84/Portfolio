@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 export default function PricingCalculator() {
   const [hydrated, setHydrated] = useState(false);
   const [users, setUsers] = useState(10);
-  const pricePerUser = 5.99;
+  const pricePerUser = 7.5;
   const total = users * pricePerUser;
 
   useEffect(() => {
