@@ -11,13 +11,18 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.4",
+    "@astrojs/react": "^4.4.2",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.3.0",
     "@tailwindcss/vite": "^4.1.4",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "astro": "^5.7.0",
+    "astro-google-analytics": "^1.0.3",
     "flowbite": "^3.1.2",
-    "tailwindcss": "^4.1.4",
-    "astro-google-analytics": "^1.0.3"
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
     "flowbite-typography": "^1.0.5",

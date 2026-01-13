@@ -15,12 +15,9 @@
   --color-primary-200: #c7ebbc;
   --color-primary-300: #ade19d;
   --color-primary-400: #90d77a;
-  /* --color-primary-500: #74cd5a;
-    --color-primary-600: #54b437;
-    --color-primary-700: #40892a; */
-  --color-primary-500: #60a5fa; /* blue-400 */
-  --color-primary-600: #3b82f6; /* blue-500 */
-  --color-primary-700: #2563eb; /* blue-600 */
+  --color-primary-500: #60a5fa;
+  --color-primary-600: #3b82f6;
+  --color-primary-700: #2563eb;
   --color-primary-800: #2a5a1b;
   --color-primary-900: #162f0e;
   --color-primary-950: #0b1707;

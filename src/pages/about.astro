@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PricingCalculator from '../components/PricingCalculator.jsx';
 ---
 
 <BaseLayout title="About Me" description="Learn more about me and my journey into web development.">
@@ -9,5 +10,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
 
     <p>Thank you for visiting!</p>
+    <div class="text-center relative w-64 mx-auto mt-12">      
+      <h3 class="font-bold mb-4 text-gray-800">Pricing Calculator (Dynamic Island)</h3>
+      <PricingCalculator client:load />
+    </div>
   </div>
 </BaseLayout>
