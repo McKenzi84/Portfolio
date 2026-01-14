@@ -1,24 +1,48 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PricingCalculator from '../components/PricingCalculator.jsx';
-import SimpleCalculator from '../components/SimpleCalculator.jsx';
-import SimpleCalculatorInput from '../components/SimpleCalculatorInput.jsx';
+import { Picture } from 'astro:assets';
+import SamuraiImage from '../assets/images/samurai_without_weapon.jpg'; // Image is 1600x900
+import SamuraiDarkImage from '../assets/images/samurai_without_weapon_dark.jpg';
+// import CarouselUniversal from "../components/Carousel_Universal.astro";
 ---
 
 <BaseLayout
   title="About Me"
   description="Tworzenie stron internetowych Jelcz-Laskowice, Strzelin, Wrocław"
 >
-  <div class="text-center relative max-w-4xl w-full px-4 mx-auto mt-12">
-    <h1 class="text-4xl font-semibold mb-9">About Me</h1>
+  <section
+    aria-labelledby="about-heading"
+    class="relative mx-auto mt-12 max-w-4xl px-4"
+  >
+    <h1
+      id="about-heading"
+      class="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white"
+    >
+      About Me
+    </h1>
 
-    <p>Sample implementation of React Island in Astro</p>
-    <p>XXXXXXXX</p>
+    <div class="space-y-3 text-left text-gray-700 dark:text-gray-300">
+      <p>Not so serious!</p>
+      <!-- <Picture src={SamuraiImage} formats={['avif', 'webp']} alt="Samurai without weapon" /> -->
+      <Picture
+  src={SamuraiImage}
+  formats={['avif', 'webp']}
+  alt="Samurai without weapon"
+  class="block dark:hidden"
+/>
 
-    <div class="flex flex-col gap-10 md:flex-row items-center justify-center mt-12">
-      <SimpleCalculator client:visible />
-      <!-- <SimpleCalculatorInput client:visible /> -->
+<Picture
+  src={SamuraiDarkImage}
+  formats={['avif', 'webp']}
+  alt="Samurai without weapon"
+  class="hidden dark:block"
+/>
     </div>
-  </div>
-</BaseLayout>
 
+    <div
+      class="mt-12 flex flex-col items-center gap-10 md:flex-row md:justify-center"
+    >
+      <!-- <CarouselUniversal /> -->
+    </div>
+  </section>
+</BaseLayout>

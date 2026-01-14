@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+
+// statically import all images (REQUIRED by <Image>)
+const images = import.meta.glob(
+  '../assets/*.{png,jpg,jpeg,svg,webp}',
+  { eager: true }
+) as Record<string, { default: ImageMetadata }>;
+
+// convert to array + sort by filename
+const slides = Object.entries(images)
+  .map(([path, mod]) => ({
+    src: mod.default,
+    name: path.split('/').pop() ?? 'slide',
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<div id="carousel" class="relative w-full" data-carousel="slide">
+  <!-- Wrapper -->
+  <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+    {slides.map((slide) => (
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <Image
+          src={slide.src}
+          alt={slide.name}
+          class="absolute top-1/2 left-1/2 w-40 h-40 md:w-80 md:h-80 -translate-x-1/2 -translate-y-1/2"
+        />
+      </div>
+    ))}
+  </div>
+
+  <!-- Controls -->
+  <button
+    type="button"
+    class="absolute top-0 left-0 z-30 flex h-full items-center px-4"
+    data-carousel-prev
+  >
+    ‹
+  </button>
+
+  <button
+    type="button"
+    class="absolute top-0 right-0 z-30 flex h-full items-center px-4"
+    data-carousel-next
+  >
+    ›
+  </button>
+</div>

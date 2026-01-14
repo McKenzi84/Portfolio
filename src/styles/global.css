@@ -50,3 +50,7 @@ code,
 pre {
   font-family: var(--font-mono);
 }
+
+html {
+  overflow-y: scroll;
+}
