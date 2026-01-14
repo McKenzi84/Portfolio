@@ -1,18 +1,26 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PricingCalculator from '../components/PricingCalculator.jsx';
+import SimpleCalculator from '../components/SimpleCalculator.jsx';
+import SimpleCalculatorInput from '../components/SimpleCalculatorInput.jsx';
 ---
 
 <BaseLayout title="About Me" description="Tworzenie stron internetowych Jelcz-Laskowice, Strzelin, Wrocław">
-  <h1 class="text-4xl font-semibold mb-9">About Me</h1>
+  <div class="text-center relative w-200 mx-auto mt-12">
+  <h1 class="text-4xl font-semibold mb-9 ">About Me</h1>
     <p>
       Sample implementation of React Island in Astro
     </p>
 
     <p>XXXXXXXX</p>
-    <div class="text-center relative w-64 mx-auto mt-12">      
-      <h3 class="font-bold mb-4 text-gray-800">Pricing Calculator (Dynamic Island)</h3>
-      <PricingCalculator client:load />
-    </div>
+    <!-- <div class="text-center relative w-200 mx-auto mt-12">   -->
+    <div class="flex flex-col gap-10 sm:flex-row items-center justify-center mt-12">     
+      <!-- <h3 class="font-bold mb-4 text-gray-800">Simple Calculator</h3>
+      <h3 class="font-bold mb-4 text-gray-800">(Dynamic Island)</h3> -->
+      <!-- <PricingCalculator client:load /> -->
+      <SimpleCalculator client:visible />
+      <!-- <SimpleCalculatorInput client:visible /> -->
+    
+  </div>
   </div>
 </BaseLayout>

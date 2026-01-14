@@ -6,7 +6,7 @@ export const SITE_URL = "https://x-tom.online/"; // your https url
 export const SITE_TITLE = "McKenzi84"; // your base page title
 export const SITE_DESCRIPTION = "Welcome to my website!"; // your base description
 export const HEADER_TITLE = "Mckenzi84"; // your title used in header
-export const LOGO_FILE_NAME = "icon.svg"; // put your logo in 'public' folder
+// export const LOGO_FILE_NAME = "icon.svg"; // put your logo in 'public' folder
 export const OPEN_GRAPH_IMAGE = "og-image.png"; // put the image in 'public' folder
 export const LOCALE = "en-EN";
 
