@@ -24,8 +24,8 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 const { page } = Astro.props;
 ---
 <!-- // This layout is used for rendering paginated list of blog posts.// -->
-<BaseLayoutNew title="Explore all posts" description="- Browse every blog post I've written.">
-  <h1 class="text-2xl font-semibold mb-9">Explore all my posts</h1>
+<BaseLayoutNew title="Resources" description="- Browse every blog post I've written.">
+  <h1 class="text-2xl font-semibold mb-9">Resources</h1>
   <section>
     {page.data.map((post: any) => <PostCard post={post} />)}
   </section>

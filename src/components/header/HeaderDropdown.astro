@@ -1,0 +1,96 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import Hamburger from "./Hamburger.astro";
+import ThemeModeButton from "./ThemeModeButton.astro";
+import { HEADER_TITLE, SITE_URL } from "../../consts";
+import LogoSVG from "../LogoSVG.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<header class="sticky top-0 z-50">
+  <nav class="bg-transparent backdrop-blur-md">
+    <div class="mx-auto max-w-screen-xl flex flex-wrap items-center justify-between p-4">
+      <!-- Logo -->
+      <a href={SITE_URL} class="flex items-center space-x-3" aria-label="Go to homepage">
+        <LogoSVG size={40} />
+      </a>
+
+      <!-- Right controls -->
+      <div class="flex items-center gap-2 md:order-2">
+        <Hamburger />
+        <ThemeModeButton />
+      </div>
+
+      <!-- Navigation -->
+      <div id="navbar-default" class="hidden w-full md:block md:w-auto">
+        <ul
+          class="mt-4 flex flex-col gap-2 rounded-lg
+            bg-white/70 backdrop-blur-md
+            dark:bg-gray-900/70
+            md:mt-0 md:flex-row md:gap-8
+            md:bg-transparent md:backdrop-blur-0"
+        >
+          <HeaderLink href="/">Home</HeaderLink>
+          <HeaderLink href="/about">About</HeaderLink>
+
+          <li class="relative">
+            <button
+              id="multiLevelDropdownButton"
+              data-dropdown-toggle="multi-dropdown"
+              type="button"
+              class="block py-2 px-3 rounded-sm font-bold
+                        md:p-0 md:w-auto
+                        text-gray-900
+                        hover:text-primary-500
+                        dark:text-white
+                        focus:outline-none"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span class="flex items-center gap-1">
+                Resources
+                <svg
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"></path>
+                </svg>
+              </span>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div
+              id="multi-dropdown"
+              class="hidden
+    absolute right-0 top-full mt-3
+    w-56 md:w-64
+    z-50
+    rounded-lg
+    border border-white/10
+    bg-white/80 backdrop-blur-md
+    shadow-lg
+    dark:bg-gray-900/80
+    dark:border-gray-700"
+              role="menu"
+              aria-labelledby="multiLevelDropdownButton"
+            >
+              <ul class="p-2 text-sm text-body font-medium">
+                <HeaderLink href="/posts">Posts</HeaderLink>
+                <HeaderLink href="/flowbite-component">Flowbite Component</HeaderLink>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    import "../../scripts/dark-mode-switch";
+  </script>
+</header>

@@ -1,6 +1,7 @@
 ---
 import Head from "../components/Head.astro";
 import Header from "../components/header/Header.astro";
+import HeaderDropdown from "../components/header/HeaderDropdown.astro";  
 import Footer from "../components/Footer.astro";
 
 interface Props {
@@ -18,7 +19,9 @@ const { title, description } = Astro.props;
   <Head title={title} description={description} />
 
   <body class="flex min-h-screen flex-col text-black dark:text-white">
-    <Header />
+    <!-- <Header /> -->
+    <HeaderDropdown />
+    
 
     <main
       id="main-content"
