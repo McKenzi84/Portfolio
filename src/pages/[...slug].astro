@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayoutNew from "../layouts/BaseLayoutNew.astro";
 import PostDate from "../components/post/PostDate.astro";
 import TagChip from "../components/post/TagChip.astro";
 // import ReadTime from "../components/post/ReadTime.astro";
@@ -18,8 +18,9 @@ const { post } = Astro.props;
 const { title, description, date, tags } = post.data;
 const { Content } = await render(post);
 ---
+<!-- // This layout is used for rendering individual blog posts.// -->
 
-<BaseLayout title={title} description={description}>
+<BaseLayoutNew title={title} description={description}>
   <article>
     <h1 class="mb-9 text-3xl md:text-4xl text-center">{title}</h1>
 
@@ -36,4 +37,4 @@ const { Content } = await render(post);
       <PostDate date={date} />
     </div>
   </article>
-</BaseLayout>
+</BaseLayoutNew>

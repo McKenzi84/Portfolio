@@ -8,19 +8,20 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+
 /* You can define your color here https://www.tints.dev */
 @theme {
-  --color-primary-50: #f3effd;
-  --color-primary-100: #e9e1fb;
-  --color-primary-200: #d5c4f8;
-  --color-primary-300: #c1a6f4;
-  --color-primary-400: #ae86f0;
-  --color-primary-500: #9a5feb;
-  --color-primary-600: #8533dd;
-  --color-primary-700: #6625ab;
-  --color-primary-800: #461778;
-  --color-primary-900: #2a0b4c;
-  --color-primary-950: #1a0532;
+--color-primary-50: #f3f3f5;
+  --color-primary-100: #e5e5e8;
+  --color-primary-200: #cbcbd2;
+  --color-primary-300: #b2b2bc;
+  --color-primary-400: #9b9ba8;
+  --color-primary-500: #808090;
+  --color-primary-600: #646477;
+  --color-primary-700: #4a4a5d;
+  --color-primary-800: #31313f;
+  --color-primary-900: #1d1d26;
+  --color-primary-950: #101017;
 
   --font-sans:
     "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -30,12 +31,43 @@
     "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-/* Apply font variables */
-body {
-  font-family: var(--font-body);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+:root {
+  --primary-50: theme(--color-primary-50);
+  --primary-100: theme(--color-primary-100);
+  --primary-200: theme(--color-primary-200);
+
+  --primary-800: theme(--color-primary-800);
+  --primary-900: theme(--color-primary-900);
+  --primary-950: theme(--color-primary-950);
 }
+:root {
+  --app-bg-gradient: linear-gradient(
+    135deg,
+    var(--primary-50),
+    var(--primary-100),
+    var(--primary-200)
+  );
+}
+
+.dark {
+  --app-bg-gradient: linear-gradient(
+    135deg,
+    var(--primary-950),
+    var(--primary-900),
+    var(--primary-800)
+  );
+}
+
+
+.app-bg {
+  background-image: var(--app-bg-gradient);
+  background-attachment: fixed;
+}
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
 
 h1,
 h2,
