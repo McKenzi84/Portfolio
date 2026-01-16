@@ -9,18 +9,18 @@ import LogoSVG from "../LogoSVG.astro";
 <header class="sticky top-0 z-50">
   <nav class="bg-transparent backdrop-blur-md">
     <div class="mx-auto max-w-screen-xl flex flex-wrap items-center justify-between p-4">
-      <!-- Logo -->
-      <a href={SITE_URL} class="flex items-center space-x-3" aria-label="Go to homepage">
+      <!-- LOGO -->
+      <a href={SITE_URL} class="flex items-center gap-3" aria-label="Go to homepage">
         <LogoSVG size={40} />
       </a>
 
-      <!-- Right controls (mobile) -->
+      <!-- RIGHT CONTROLS -->
       <div class="flex items-center gap-2 md:order-2">
         <Hamburger />
         <ThemeModeButton />
       </div>
 
-      <!-- Navigation -->
+      <!-- NAVIGATION -->
       <div id="navbar-default" class="hidden w-full md:block md:w-auto">
         <ul
           class="mt-4 flex flex-col gap-2 rounded-lg
@@ -36,85 +36,66 @@ import LogoSVG from "../LogoSVG.astro";
           <li class="relative">
             <button
               type="button"
-              class="group flex items-center gap-1
-                py-2 px-3 rounded-sm font-bold
-                md:p-0
+              data-resources-toggle
+              aria-expanded="false"
+              class="flex items-center gap-1
+                py-2 px-3 md:p-0
+                font-bold
                 text-gray-900 hover:text-primary-500
                 dark:text-white
                 focus:outline-none"
-              aria-haspopup="true"
-              aria-expanded="false"
-              data-dropdown-button
             >
               Resources
-              <svg
-                class="w-4 h-4 transition-transform group-aria-expanded:rotate-180"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"></path>
+              <svg class="w-4 h-4 transition-transform" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"></path>
               </svg>
             </button>
 
-            <!-- Dropdown menu -->
-            <div
+            <!-- SUBMENU -->
+            <ul
+              data-resources-menu
               class="hidden
-                absolute left-0 top-full mt-2
-                w-56
-                rounded-lg
-                border border-white/10
-                bg-white/80 backdrop-blur-md
-                shadow-lg
-                z-50
-                dark:bg-gray-900/80
-                dark:border-gray-700"
-              role="menu"
-              data-dropdown
+                mt-2 ml-4 flex flex-col gap-1
+                md:ml-0
+                md:absolute
+                md:top-full
+                md:left-0
+                md:mt-3
+                md:min-w-[14rem]
+                md:rounded-lg
+                md:border md:border-white/10
+                md:bg-white/80 md:backdrop-blur-md
+                md:shadow-lg
+                md:dark:bg-gray-900/80
+                md:p-2"
             >
-              <ul class="p-2 flex flex-col gap-1">
-                <HeaderLink href="/posts">Posts</HeaderLink>
-
-                <HeaderLink href="/flowbite-component">Flowbite Component</HeaderLink>
-              </ul>
-            </div>
+              <HeaderLink href="/posts">Posts</HeaderLink>
+              <HeaderLink href="/resources">Resources</HeaderLink>
+              <HeaderLink href="/flowbite-component">Flowbite</HeaderLink>
+            </ul>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- DROPDOWN SCRIPT (NO FLOWBITE) -->
+  <!-- DROPDOWN SCRIPT -->
   <script>
-    document.addEventListener("click", (e) => {
-      const target = e.target;
+    const button = document.querySelector("[data-resources-toggle]");
+    const menu = document.querySelector("[data-resources-menu]");
 
-      // Type guard – kluczowe dla TS
-      if (!(target instanceof HTMLElement)) return;
-
-      const button = target.closest("[data-dropdown-button]");
-      const dropdowns = document.querySelectorAll<HTMLElement>("[data-dropdown]");
-
-      dropdowns.forEach((dropdown) => {
-        const btn = dropdown.previousElementSibling;
-
-        if (btn instanceof HTMLElement && !dropdown.contains(target) && !btn.contains(target)) {
-          dropdown.classList.add("hidden");
-          btn.setAttribute("aria-expanded", "false");
-        }
-      });
-
-      if (!(button instanceof HTMLElement)) return;
-
-      const dropdown = button.nextElementSibling;
-
-      if (!(dropdown instanceof HTMLElement)) return;
-
+    button?.addEventListener("click", () => {
       const expanded = button.getAttribute("aria-expanded") === "true";
-
       button.setAttribute("aria-expanded", String(!expanded));
-      dropdown.classList.toggle("hidden");
+      menu?.classList.toggle("hidden");
+
+      const icon = button.querySelector("svg");
+      icon?.classList.toggle("rotate-180");
     });
+  </script>
+
+  <!-- THEME SWITCH SCRIPT -->
+  <script>
+    import "../../scripts/dark-mode-switch";
   </script>
 </header>
